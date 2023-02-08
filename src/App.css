@@ -1,38 +1,197 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+.container {
+  /* background-color: blueviolet; */
+  background-color: #454d66;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+
+  color: #ffffff;
+}
+
+.header-app {
+  font-size: 29px;
+  line-height: 36px;
+  /* color: #ffffff; */
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin-left: 10px;
+  /* font-size: 29px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin-left: 10px; */
+  /* text-align: center; */
+}
+
+.add-city-input {
+  width: 423px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #1f2128;
+  padding-left: "10%";
+  /* margin-left: 200px; */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 0.4;
+  font-size: 16px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: "Open Sans";
+}
+
+.add-city-btn {
+  width: 131px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #6c5dd3;
+  font-size: 16px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Open Sans";
+  text-align: center;
+  border: none;
+}
+
+.view-weather-header {
+  /* width: 1201px; */
+  width: 70%;
+  height: 50%;
+  /* height: 391px; */
+  border-radius: 8px 8px 0 0;
+  background-color: #378de7;
+}
+
+.view-weather-back-arrow {
+  padding: 20px;
+  cursor: pointer;
+  /* color: white; */
+}
+.view-weather-city {
+  font-size: 29px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-align: center;
+  line-height: 0;
+}
+
+.view-weather-date {
+  font-size: 16px;
+  /* color: #ffffff; */
+  font-weight: 400;
+  font-family: "Open Sans";
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.view-weather-temp {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  line-height: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.view-weather-text {
+  font-size: 19px;
+  /* line-height: 36px; */
+  /* color: #ffffff; */
+  font-weight: 600;
+  font-family: "Open Sans";
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.view-weather-cloud-icon {
+  font-size: 40px;
+}
+.view-weather-header-last-row {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  /* color: #ffffff; */
+}
+
+.view-weather-divider {
+  width: 2px;
+  height: 100px;
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.view-weather-footer {
+  /* width: 1201px; */
+  width: 70%;
+  /* height: 206px; */
+  border-radius: 0 0 8px 8px;
+  background-color: #383b47;
+}
+
+.view-weather-footer-row {
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: #ffffff; */
+
+  width: 70%;
+  /* height: 206px; */
+  border-radius: 0 0 8px 8px;
+  background-color: #383b47;
 }
 
-.App-link {
-  color: #61dafb;
+.view-weather-footer-row-coloumn {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather-app-logo {
+  display: flex;
+  color: #ffffff;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.weather-app-logo-icon {
+  font-size: 40px;
+}
+
+.box-size {
+  /* width: 300px; */
+  /* height: 217px; */
+  border-radius: 8px;
+  background-color: #378de7;
+  margin: 10px;
+  width: 46%;
+  height: 150px;
+}
+
+@media (max-width: 1200px) {
+  .box-size {
+    width: 100%;
+    max-height: 150px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 590px) {
+  .box-size {
+    margin: 10px;
   }
+}
+
+.dashboard-temp {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  line-height: 0;
+}
+
+.dashboard-city {
+  font-size: 20px;
+  /* color: #ffffff; */
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-align: center;
+  line-height: 0;
 }

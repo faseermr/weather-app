@@ -8,6 +8,7 @@ const ViewWeather = () => {
   const { id } = useParams();
   const [weatherData, setWeatherData] = useState([]);
   const [cacheData, setCacheData] = useState(false);
+  const [errMessage, setErrMessage] = useState("");
 
   // Function to add our data into cache
   const addDataIntoCache = (cacheName, url, response) => {
@@ -55,15 +56,23 @@ const ViewWeather = () => {
           setWeatherData(item);
           setCacheData(false);
         } else {
-          const res = await weatherServices(city_id);
-          setWeatherData(res.data);
-          setCacheData(true);
+          try {
+            const res = await weatherServices(city_id);
+            setWeatherData(res.data);
+            setCacheData(true);
+          } catch (err) {
+            setErrMessage(err.message);
+          }
         }
       });
     } else {
-      const res = await weatherServices(city_id);
-      setWeatherData(res.data);
-      setCacheData(true);
+      try {
+        const res = await weatherServices(city_id);
+        setWeatherData(res.data);
+        setCacheData(true);
+      } catch (err) {
+        setErrMessage(err.message);
+      }
     }
   };
 
@@ -75,7 +84,9 @@ const ViewWeather = () => {
 
           <ViewWeatherFooter val={weatherData} />
         </>
-      ) : null}
+      ) : (
+        <div className="error-message">{errMessage}</div>
+      )}
     </React.Fragment>
   );
 };

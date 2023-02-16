@@ -116,3 +116,9 @@
 .view-weather-footer-base {
   height: 50%;
 }
+
+.error-message {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Open Sans";
+}

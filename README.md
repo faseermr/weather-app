@@ -1,9 +1,13 @@
-- This is Weather App using openweathermap api
+------------- This is Weather App using openweathermap api --------------------------------
 
 - To run this app locally,
   1> run 'npm install' command on root directory.
 
   2> create .env file and create variable called `REACT_APP_API_KEY` and paste your openweathermap api token.
+
+  3> run 'npm start' command on root directory.
+
+---
 
 # Getting Started with Create React App
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillCloudSunFill } from "react-icons/bs";
+import "../css/Logo.css";
 
 const Logo = () => {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { FiNavigation } from "react-icons/fi";
+import "../css/ViewWeatherFooter.css";
 
 const ViewWeatherFooter = ({ val }) => {
   return (

@@ -1,0 +1,19 @@
+.view-weather-footer {
+  width: 70%;
+
+  border-radius: 0 0 8px 8px;
+  background-color: #383b47;
+}
+
+.view-weather-footer-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+  border-radius: 0 0 8px 8px;
+  background-color: #383b47;
+}
+
+.view-weather-footer-row-coloumn {
+  text-align: center;
+}

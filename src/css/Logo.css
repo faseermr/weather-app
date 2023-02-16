@@ -1,0 +1,18 @@
+.weather-app-logo {
+  display: flex;
+  color: #ffffff;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.weather-app-logo-icon {
+  font-size: 40px;
+}
+
+.header-app {
+  font-size: 29px;
+  line-height: 36px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  margin-left: 10px;
+}

@@ -1,3 +1,5 @@
+// month names from january to december
+
 export const monthNames = [
   "Jan",
   "Feb",

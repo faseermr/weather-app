@@ -3,11 +3,11 @@ import { BiArrowBack } from "react-icons/bi";
 import { BsCloudy } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { monthNames } from "../resources";
+import "../css/ViewWeatherHeader.css";
 
 const ViewWeatherHeader = ({ val }) => {
   const navigate = useNavigate();
 
-  //   console.log(val);
   return (
     <div className="view-weather-header">
       <div className="view-weather-back-arrow" onClick={() => navigate(`/`)}>

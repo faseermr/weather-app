@@ -1,0 +1,54 @@
+.view-weather-header {
+  width: 70%;
+  height: 50%;
+  border-radius: 8px 8px 0 0;
+  background-color: #378de7;
+}
+
+.view-weather-back-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+.view-weather-city {
+  font-size: 29px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-align: center;
+  line-height: 0;
+}
+
+.view-weather-date {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+.view-weather-temp {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Open Sans";
+  line-height: 0;
+}
+
+.view-weather-text {
+  font-size: 19px;
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+.view-weather-cloud-icon {
+  font-size: 40px;
+}
+
+.view-weather-header-last-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.view-weather-divider {
+  width: 2px;
+  height: 100px;
+  background-color: #ffffff;
+  opacity: 0.4;
+}

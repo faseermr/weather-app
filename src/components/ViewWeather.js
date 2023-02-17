@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ViewWeatherFooter from "./ViewWeatherFooter";
 import ViewWeatherHeader from "./ViewWeatherHeader";
 import { weatherServices } from "../services/http";
+import cities from "../resources/cities.json";
 
 const ViewWeather = () => {
   const { id } = useParams();
@@ -11,13 +12,13 @@ const ViewWeather = () => {
   const [errMessage, setErrMessage] = useState("");
 
   // Function to add our data into cache
-  const addDataIntoCache = (cacheName, url, response) => {
+  const addDataIntoCache = (url, response, city) => {
     // Converting our response into Actual Response form
     const data = new Response(JSON.stringify(response));
 
     if ("caches" in window) {
       // Opening given cache and putting our data into it
-      caches.open(cacheName).then((cache) => {
+      caches.open(city.CityCode).then((cache) => {
         cache.put(url, data);
       });
 
@@ -29,13 +30,15 @@ const ViewWeather = () => {
           });
         });
         setCacheData(false);
-      }, 5 * 60 * 1000);
+      }, city.expire_time * 1000);
     }
   };
 
   useEffect(() => {
     if (weatherData.length != 0 && cacheData == true) {
-      addDataIntoCache("WeatherCache", "https://localhost:3000", weatherData);
+      let c = cities.List.find((val) => val.CityCode == weatherData.id);
+
+      addDataIntoCache("https://localhost:3000", weatherData, c);
     }
   }, [weatherData, cacheData]);
 
@@ -47,23 +50,14 @@ const ViewWeather = () => {
     let names = await caches.keys();
 
     // check cache wheather weather cache exists or not
-    if (names.includes("WeatherCache")) {
-      const cacheStorage = await caches.open("WeatherCache");
+    if (names.includes(city_id)) {
+      const cacheStorage = await caches.open(city_id);
       const cachedResponse = await cacheStorage.match("https://localhost:3000");
       cachedResponse.json().then(async (item) => {
         // check wheather cache data same or not
-        if (item.id == id) {
-          setWeatherData(item);
-          setCacheData(false);
-        } else {
-          try {
-            const res = await weatherServices(city_id);
-            setWeatherData(res.data);
-            setCacheData(true);
-          } catch (err) {
-            setErrMessage(err.message);
-          }
-        }
+
+        setWeatherData(item);
+        setCacheData(false);
       });
     } else {
       try {

@@ -4,6 +4,7 @@ import ViewWeatherFooter from "./ViewWeatherFooter";
 import ViewWeatherHeader from "./ViewWeatherHeader";
 import { weatherServices } from "../services/http";
 import cities from "../resources/cities.json";
+import ErrorMessage from "./ErrorMessage";
 
 const ViewWeather = () => {
   const { id } = useParams();
@@ -79,7 +80,7 @@ const ViewWeather = () => {
           <ViewWeatherFooter val={weatherData} />
         </>
       ) : (
-        <div className="error-message">{errMessage}</div>
+        <ErrorMessage errMessage={errMessage} />
       )}
     </React.Fragment>
   );
